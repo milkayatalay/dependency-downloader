@@ -1,8 +1,14 @@
 #!/bin/bash
 
-echo "Enter package name for downloading with dependencies\n"
-
-read packagename
+echo $#
+if [[ "$#" == "0" ]]
+    then
+        echo $1 
+        printf "Enter package name for downloading with dependencies \n "
+        read packagename
+else
+    packagename=${1}
+fi
 
 mkdir $PWD/${packagename}
 
